@@ -1,13 +1,13 @@
 package org.mortbay.jetty.maven.modulestart;
 
+import org.junit.Rule;
+import org.junit.Test;
+import java.io.File;
 
 import org.apache.maven.plugin.testing.MojoRule;
 import org.apache.maven.plugin.testing.WithoutMojo;
-
-import org.junit.Rule;
-import static org.junit.Assert.*;
-import org.junit.Test;
-import java.io.File;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 public class ModifyModFileMojoTest
 {
@@ -25,36 +25,29 @@ public class ModifyModFileMojoTest
         }
     };
 
-    /**
-     * @throws Exception if any
-     */
     @Test
     public void testSomething()
             throws Exception
     {
-        File pom = new File( "target/test-classes/project-to-test/" );
-        assertNotNull( pom );
-        assertTrue( pom.exists() );
+        File pom = new File("target/test-classes/project-to-test/");
+        assertNotNull(pom);
+        assertTrue(pom.exists());
 
-        ModifyModFileMojo modifyModFileMojo = (ModifyModFileMojo) rule.lookupConfiguredMojo( pom, "modify-mod-file" );
-        assertNotNull( modifyModFileMojo );
+        ModifyModFileMojo modifyModFileMojo = (ModifyModFileMojo)rule.lookupConfiguredMojo(pom, "modify-mod-file");
+        assertNotNull(modifyModFileMojo);
         modifyModFileMojo.execute();
 
-        File outputDirectory = ( File ) rule.getVariableValueFromObject( modifyModFileMojo, "outputDirectory" );
-        assertNotNull( outputDirectory );
-        assertTrue( outputDirectory.exists() );
-
-        File touch = new File( outputDirectory, "touch.txt" );
-        assertTrue( touch.exists() );
+        File outputDirectory = (File) rule.getVariableValueFromObject(modifyModFileMojo, "outputDirectory");
+        assertNotNull(outputDirectory);
+        assertTrue(outputDirectory.exists());
 
     }
 
-    /** Do not need the MojoRule. */
     @WithoutMojo
     @Test
     public void testSomethingWhichDoesNotNeedTheMojoAndProbablyShouldBeExtractedIntoANewClassOfItsOwn()
     {
-        assertTrue( true );
+        assertTrue(true);
     }
 
 }
