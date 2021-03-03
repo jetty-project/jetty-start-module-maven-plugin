@@ -1,0 +1,2 @@
+_extends: .github
+tag-template: jetty-start-module-maven-plugin-$NEXT_PATCH_VERSION
