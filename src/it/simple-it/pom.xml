@@ -4,11 +4,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.mortbay.jetty.maven.it</groupId>
-  <artifactId>simple-it-unixsocket-mod</artifactId>
+  <artifactId>simple-it-gcloud-mod</artifactId>
   <version>1.0-SNAPSHOT</version>
 <!--  <packaging>jar</packaging>-->
 
-  <description>A simple IT verifying the basic use case.</description>
+  <description>A simple IT verifying the gcloud use case.</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,6 +27,10 @@
             <goals>
               <goal>modify-mod-file</goal>
             </goals>
+            <configuration>
+              <filesLibPath>lib/gcloud</filesLibPath>
+<!--              <modFilesPattern>.*datastore.*</modFilesPattern>-->
+            </configuration>
           </execution>
         </executions>
       </plugin>

@@ -28,14 +28,19 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.pivovarit</groupId>
-      <artifactId>throwing-function</artifactId>
-      <version>1.5.1</version>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-archiver</artifactId>
+      <version>4.2.2</version>
     </dependency>
     <dependency>
       <groupId>com.diffplug.durian</groupId>
       <artifactId>durian</artifactId>
       <version>3.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.11</version>
     </dependency>
     <dependency>
       <groupId>org.apache.maven</groupId>
@@ -172,6 +177,7 @@
           <goals>
             <goal>clean</goal>
             <goal>test-compile</goal>
+            <goal>install</goal>
           </goals>
         </configuration>
         <executions>
