@@ -12,9 +12,6 @@
 
   <name>jetty-start-module-maven-plugin Maven Plugin</name>
 
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
-
   <prerequisites>
     <maven>${maven.version}</maven>
   </prerequisites>
