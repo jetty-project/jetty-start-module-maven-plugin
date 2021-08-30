@@ -20,7 +20,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <maven.version>3.8.2</maven.version>
+    <maven.version>3.8.1</maven.version>
   </properties>
 
   <dependencies>
@@ -90,6 +90,7 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
       <version>1.7.30</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
@@ -174,6 +175,7 @@
         <version>3.2.2</version>
         <configuration>
           <debug>true</debug>
+          <streamLogs>true</streamLogs>
           <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
           <pomIncludes>
             <pomInclude>*/pom.xml</pomInclude>
